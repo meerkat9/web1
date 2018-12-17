@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>구구단</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    h1 {
+      text-align: center;
+      color: gray;
+    }
+   .dan {
+     background-color: salmon;
+     color: white;
+     font-size: 20px;
+     width: 200px;
+     float: left;
+     margin: 10px;
+     padding: 10px;
+     border-radius: 10px;
+   }
+  </style>
+</head>
+<body>
+  <h1>구구단 완결</h1>
+  <div id="container"></div>
+  <script>
+
+    function main(){
+      console.log('main 함수 호출');
+      var input = prompt('숫자를 입력해주세요(ex: 8,7 => 2단부터 8단까지 7배수까지만 출력됨)');
+      var dan = Number(input.slice(',')[0]);
+      console.log('dan', dan);
+      if(!(dan > 1 && dan < 10)){
+        alert('2단~9단만 가능합니다.');
+        return;
+      }
+      var multiN = Number(input.slice(',')[2]);
+      console.log('mulit', multiN);
+      if(!(multiN >= 1 && multiN < 10)){
+        alert('1~9배수만 가능합니다.');
+        return;
+      }
+      make99(dan, multiN);
+    }
+
+    function make99(dan, multiN){
+      var result = '';
+      for(var i=2; i <= dan; i++){
+        result = '';
+        for(var j=1; j<= multiN; j++){
+          result += `${i} * ${j} = ${i * j} <br/>`;
+        }
+        var div = document.createElement('div');
+        div.setAttribute('class', 'dan');
+        div.innerHTML = result;
+        document.getElementById('container').appendChild(div);
+      }
+    }
+
+    main();
+
+  </script>
+</body>
+</html>

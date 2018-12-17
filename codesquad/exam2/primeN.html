@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>prime Number</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h3 id="result"></h3>
+  <script>
+    var input = prompt('숫자를 입력하세요.');
+    var num = Number(input);
+    var isPrime = true;
+    
+    for(var i = 2; i < num ; i++){
+      if(num % i === 0){
+        isPrime = false; 
+        break;
+      }
+    }
+
+    if(isPrime){
+      document.getElementById('result').innerText = input + '은(는) 소수입니다';
+    } else {
+      document.getElementById('result').innerText = input + '은(는) 소수가 아닙니다';
+    }
+  </script>
+</body>
+</html>

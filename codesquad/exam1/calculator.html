@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h3 id ="sumResult"></h3>
+  <h3 id ="subResult"></h3>
+  <h3 id ="multiResult"></h3>
+  <h3 id ="divideResult"></h3>
+<script>
+var inputN1 = prompt('첫번째 숫자를 입력해주세요.')  
+var n1 = Number(inputN1);
+var inputN2 = prompt('두번째 숫자를 입력해주세요.')  
+var n2 = Number(inputN2);
+var sumResult = `${n1} + ${n2} = ${n1 + n2}`;
+var subResult = `${n1} - ${n2} = ${n1 - n2}`;
+var multiResult = `${n1} * ${n2} = ${n1 * n2}`;
+var divideResult = `${n1} / ${n2} = ${n1 / n2}`;
+
+document.getElementById('sumResult').innerText  = sumResult;
+document.getElementById('subResult').innerText  = subResult;
+document.getElementById('multiResult').innerText  = multiResult;
+document.getElementById('divideResult').innerText  = divideResult;
+
+</script> 
+</body>
+
+</html>

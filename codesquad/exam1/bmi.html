@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BMI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+</head>
+<body>
+  <h3 id="bmi"></h3>
+
+  <!-- 몸무게(kg) ÷ (신장(m) × 신장(m)) -->
+  <script>
+    var weight = prompt('몸무게를 입력해주세요.(kg)')  
+    var n1 = Number(weight);
+    var height = prompt('키를 입력해주세요.(m)')  
+    var n2 = Number(height);
+
+    var bmi = weight / Math.pow(height, 2);
+    document.getElementById('bmi').innerText  = `BMI 지수는 ${bmi} 입니다.`;
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>multiplication table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>구구단</h1>
+  <span>알고싶은 구구단의 숫자를 입력하세요(2~9) :</span>
+  <input id="inputN" type="text"/>
+  <button onclick="gugudan();">확인</button>
+  <div id="result"></div>
+  <script>
+    function gugudan(){
+      var input = document.getElementById('inputN').value;
+      var inputN = Number(input);
+      if(!(inputN > 1 && inputN < 10)){
+        alert('2~9 사이의 숫자를 입력해주세요');
+        return;
+      } 
+      var result = '';
+      for(var i = 1; i < 10; i ++){
+        result += `${inputN} * ${i} = ${inputN * i} <br/>`;
+      }
+      document.getElementById('result').innerHTML = result; 
+    }
+  </script>
+</body>
+</html>

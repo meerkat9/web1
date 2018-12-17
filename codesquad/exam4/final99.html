@@ -30,13 +30,13 @@
     function main(){
       console.log('main 함수 호출');
       var input = prompt('숫자를 입력해주세요(ex: 8,7 => 2단부터 8단까지 7배수까지만 출력됨)');
-      var dan = Number(input.slice(',')[0]);
+      var dan = Number(input.split(',')[0]);
       console.log('dan', dan);
       if(!(dan > 1 && dan < 10)){
         alert('2단~9단만 가능합니다.');
         return;
       }
-      var multiN = Number(input.slice(',')[2]);
+      var multiN = Number(input.split(',')[1]);
       console.log('mulit', multiN);
       if(!(multiN >= 1 && multiN < 10)){
         alert('1~9배수만 가능합니다.');

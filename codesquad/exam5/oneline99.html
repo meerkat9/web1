@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>구구단</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    h1 {
+      text-align: center;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>구구단 완결</h1>
+  <input id ="input" type="text" placeholder="계산하고 싶은 식을 입력하세요">
+  <button onclick="main()">계산</button>
+  <div id="result"></div>
+  <script>
+    var input = {};
+    var calculator = {};
+
+    input.getValue = function(){
+      return input.valueArr.shift();
+    };
+
+    calculator.calculate = function(n1, n2, operator){
+      var result = 0;
+      switch(operator){
+          case '+':
+            result = n1 + n2;
+            return result;
+          case '-':
+            result = n1 - n2;
+            return result;
+          case '*':
+            result = n1 * n2;
+            return result;
+          case '/':
+            result = n1 / n2;
+            return result;
+          default :
+            return 'error';  
+      }
+    }
+
+    function main(){
+      var inputValue = document.getElementById('input').value;
+      input.valueArr = inputValue.split(" ");
+
+      var result = Number(input.getValue());
+      while(input.valueArr.length > 0){        
+        var operator = input.getValue();
+        var second = Number(input.getValue());
+        result = calculator.calculate(result, second, operator);
+        if(result === 'error'){
+          alert('연산자는 + , -, *, / 만 가능합니다.');
+          return;
+        }
+      }
+      document.getElementById('result').innerText = `최종결과 값은 ${result} 입니다.`;      
+    }
+
+
+  </script>
+</body>
+</html>

@@ -59,30 +59,30 @@
 <body>
   <h1>계산기</h1>
   <div class="container">
-    <div class="input">0</div>
+    <div class="input" id="output">0</div>
     <div class="buttons" id="btn1">
-      <div id="7">7</div>
-      <div id="8">8</div>
-      <div id="9">9</div>
-      <div class="otherBtn" id="div">/</div>
+      <div id="7" onclick="clickButton(event);">7</div>
+      <div id="8" onclick="clickButton(event);">8</div>
+      <div id="9" onclick="clickButton(event);">9</div>
+      <div class="otherBtn" id="div" onclick="clickButton(event);">/</div>
     </div>
     <div class="buttons" id="btn2">
-      <div id="4">4</div>
-      <div id="5">5</div>
-      <div id="6">6</div>
-      <div class="otherBtn" id="mul">*</div>
+      <div id="4" onclick="clickButton(event);">4</div>
+      <div id="5" onclick="clickButton(event);">5</div>
+      <div id="6" onclick="clickButton(event);">6</div>
+      <div class="otherBtn" id="mul" onclick="clickButton(event);">*</div>
     </div>
     <div class="buttons" id="btn3">
-      <div id="1">1</div>
-      <div id="2">2</div>
-      <div id="3">3</div>
-      <div class="otherBtn" id="sub">-</div>
+      <div id="1" onclick="clickButton(event);">1</div>
+      <div id="2" onclick="clickButton(event);">2</div>
+      <div id="3" onclick="clickButton(event);">3</div>
+      <div class="otherBtn" id="sub" onclick="clickButton(event);">-</div>
     </div>
     <div class="buttons" id="btn4">
-      <div class="otherBtn" id="del">del</div>
-      <div id="0">0</div>
-      <div class="otherBtn" id="eq">=</div>
-      <div class="otherBtn" id="plus">+</div>
+      <div class="otherBtn" id="del" onclick="clickButton(event);">del</div>
+      <div id="0" onclick="clickButton(event);">0</div>
+      <div class="otherBtn" id="eq" onclick="showResult(event);">=</div>
+      <div class="otherBtn" id="plus" onclick="clickButton(event);">+</div>
     </div>
   </div>
   <script src="calc-gui.js">

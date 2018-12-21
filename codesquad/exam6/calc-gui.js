@@ -3,8 +3,23 @@ input.getInput = function(){
   return this.array.join("");
 };
 
+input.prepareCalcul = function(){
+  this.array = this.getInput().split(" ");
+};
+
+input.getValue = function(){  
+  return this.array.shift();
+};
+
+input.isEmpty = function(){
+  return this.array.length === 0;
+}
+
 var output = {};
 output.text = document.getElementById('output');
+output.display = function(str){
+  this.text.innerText = str;
+};
 
 function clickButton(e){
   var str = e.target.innerText;
@@ -23,22 +38,15 @@ function clickButton(e){
     input.array.push(str);
   }
 
-  if(input.array.length === 0){
-    output.text.innerText = 0;
+  if(input.isEmpty()){
+    output.display(0); 
   } else {
-    output.text.innerText = input.getInput();
+    output.display(input.getInput());
   }
   
 }
 
-function showResult(e){
-  console.log(input.array);
-}
 var calculator = {};
-
-input.getValue = function(){
-  return input.valueArr.shift();
-};
 
 calculator.calculate = function(n1, n2, operator){
   var result = 0;
@@ -60,20 +68,20 @@ calculator.calculate = function(n1, n2, operator){
   }
 }
 
-function main(){
-  var inputValue = document.getElementById('input').value;
-  input.valueArr = inputValue.split(" ");
-
+function showResult(e){
+  console.log(input.getInput());
+  input.prepareCalcul();
   var result = Number(input.getValue());
-  while(input.valueArr.length > 0){        
+  while(!input.isEmpty()){        
     var operator = input.getValue();
     var second = Number(input.getValue());
     result = calculator.calculate(result, second, operator);
     if(result === 'error'){
-      alert('연산자는 + , -, *, / 만 가능합니다.');
+      alert('유효한 식이 아닙니다.');
       return;
     }
-  } 
-  document.getElementById('result').innerText = `최종결과 값은 ${result} 입니다.`;      
+  }
+  output.display(result);
+  input.array = [result];
 }
 

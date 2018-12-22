@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Puzzle 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+     h1 {
+      text-align: center;
+      color: gray;
+    }
+    .container {
+      font-size: 0;
+      width: 382px;
+      margin: 0 auto;
+      border: 2px solid peru;
+      border-radius: 10px;
+    }
+    .card {
+      width: 60px;
+      height: 60px;
+      background-color: burlywood;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      margin: 2px;
+      display: inline-block;
+      text-align: center;
+      line-height: 60px;
+      cursor: pointer;
+    }
+
+    .btnContainer {
+      margin: 010px auto;
+      width: 382px;      
+      text-align: center;
+    }
+
+    .btn {
+      width: 100px;
+      height: 40px;
+      background-color: cadetblue;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      border: none;
+      border-radius: 10px;
+      margin: 2px;
+      display: inline-block;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .result {
+      width: 200px;
+      height: 40px;
+      background-color: darkslategray;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      border: none;
+      border-radius: 10px;
+      margin: 0 auto;
+      text-align: left;
+      line-height: 40px;
+      padding-left: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1 id="str">CREAM</h1>
+  <div id="cardContainer" class="container"></div>
+  <div class="btnContainer">
+    <div class="btn">뒤집기</div>
+    <div class="btn">밀어내기</div>
+  </div>
+  <div class="result">결과</div>
+  <script>
+    
+    var container = document.getElementById('cardContainer');
+    var str = document.getElementById('str').innerText;
+    
+    for(let i =0; i< str.length; i++){
+      var card = document.createElement('div');
+      card.innerText = str[i];
+      card.classList.add('card');
+      container.append(card);
+    }
+  </script>
+</body>
+</html>

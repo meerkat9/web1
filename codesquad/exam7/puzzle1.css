@@ -1,0 +1,67 @@
+h1 {
+  text-align: center;
+  color: gray;
+}
+.container {
+  font-size: 0;
+  width: 382px;
+  margin: 0 auto;
+  border: 2px solid peru;
+  border-radius: 10px;
+}
+.card {
+  width: 60px;
+  height: 60px;
+  background-color: burlywood;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+.btnContainer {
+  margin: 10px auto;
+  width: fit-content;      
+  text-align: center;
+}
+
+.btn {
+  width: 120px;
+  height: 40px;
+  background-color: cadetblue;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.result {
+  width: 200px;
+  height: 40px;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+.equal {
+  background-color: darkslategray;
+}

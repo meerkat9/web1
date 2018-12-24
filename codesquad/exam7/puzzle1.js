@@ -1,20 +1,49 @@
 var cardObj = {
   array:[],
   btns:[],
-  firstword: document.getElementById('str').innerText,
+  firstword: '',
   result: document.getElementsByClassName('result')[0]
 };
+var wordArr = ['apple', 'lime', 'grape', 'orange', 'melon', 'strawberry', 'peach', 'mango', 'tomato', 'lemon']
 
-cardObj.create = function(){
+cardObj.chooseFruit = function(){  
+  var randomPos = Math.floor(Math.random()*wordArr.length);  
+  var fruit = wordArr[randomPos];
+  document.getElementById('str').innerText = fruit;
+  this.firstword = fruit;
+  //console.log('fruit',fruit);  
+}
+
+cardObj.createCard = function(){
+  //초기화
+  this.array = [];
+  this.btns = [];
   var container = document.getElementById('cardContainer');
-  var str = this.firstword;
-  for(let i =0; i< str.length; i++){
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  var fruit = this.firstword;
+  for(let i =0; i< fruit.length; i++){
     var card = document.createElement('div');
-    card.innerText = str[i];
+    card.innerText = fruit[i];
     card.classList.add('card');
-    this.array.push(str[i]);
     this.btns.push(card);
+    this.array.push(fruit[i]);
     container.append(card);
+  }
+};
+
+cardObj.shuffle = function(){
+  var toggle = Math.floor(Math.random()*2) === 1;
+  if(toggle){
+    this.swap();
+  }
+  var random = Math.floor(Math.random()*(this.array.length-1));
+  for(let i=0; i< random; i ++){
+    this.rShift();    
+  }
+  if(!toggle && random === 0){
+    this.swap();
   }
 }
 
@@ -49,10 +78,18 @@ cardObj.changeResult = function(){
   if(cardWord === this.firstword){
     result.innerText = "일치합니다";
     result.classList.add('equal');
+    this.init();
+    document.getElementById('prize').innerText += 'O';
   } else {
     result.innerText = "일치하지 않습니다.";
     result.classList.remove('equal');
   }
 }
 
-cardObj.create();
+cardObj.init = function(){
+  this.chooseFruit();
+  this.createCard();
+  this.shuffle();
+};
+
+cardObj.init();

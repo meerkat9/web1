@@ -4,7 +4,7 @@ h1 {
 }
 .container {
   font-size: 0;
-  width: 382px;
+  width: max-content;
   margin: 0 auto;
   border: 2px solid peru;
   border-radius: 10px;

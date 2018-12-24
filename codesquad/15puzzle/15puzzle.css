@@ -1,0 +1,41 @@
+
+.container {
+  width: 416px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.back {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  vertical-align: middle;  
+  font-size: 24px;
+  font-weight: bold;
+  background-color: silver;
+  color: white;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  vertical-align: middle;  
+  font-size: 24px;
+  font-weight: bold;
+  background-color: cadetblue;
+  color: white;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
